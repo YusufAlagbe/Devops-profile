@@ -1,4 +1,4 @@
-import Head from 'next/head'
+﻿import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import Navbar from '../components/Navbar'
@@ -21,7 +21,7 @@ export default function Home() {
       <Head><title>Yusuf Alagbe | Senior DevOps Engineer</title></Head>
       <Navbar />
 
-      {/* ── HERO ── */}
+      {/* â”€â”€ HERO â”€â”€ */}
       <section style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '120px 0 80px', position: 'relative', overflow: 'hidden' }}>
         {/* Orbs */}
         <div className="orb" style={{ width: 500, height: 500, background: 'radial-gradient(circle, rgba(0,212,184,0.12) 0%, transparent 70%)', top: -100, right: -100 }} />
@@ -47,11 +47,11 @@ export default function Home() {
             </div>
 
             <p className="animate-fadeUp delay-4" style={{ color: 'var(--text-dim)', fontSize: '1.05rem', lineHeight: 1.8, marginBottom: 36, maxWidth: 520 }}>
-              11+ years designing and operating cloud-native infrastructure at scale. Specializing in Kubernetes, Terraform, and CI/CD automation across Azure and AWS — shipping faster, failing safer.
+              11+ years designing and operating cloud-native infrastructure at scale. Specializing in Kubernetes, Terraform, and CI/CD automation across Azure and AWS â€” shipping faster, failing safer.
             </p>
 
             <div className="animate-fadeUp delay-5" style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-              <Link href="/projects" className="btn-primary">View My Work →</Link>
+              <Link href="/projects" className="btn-primary">View My Work â†’</Link>
               <Link href="/contact" className="btn-outline">Get In Touch</Link>
             </div>
 
@@ -66,7 +66,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right — Photo */}
+          {/* Right â€” Photo */}
           <div className="animate-fadeIn delay-3" style={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
             <div style={{ position: 'relative', width: 380, height: 460 }}>
               {/* Frame deco */}
@@ -88,14 +88,14 @@ export default function Home() {
         </div>
 
         <style jsx>{`
-          @media (max-width: 768px) {
-            div.container-custom > div { grid-template-columns: 1fr !important; }
-            div[style*='width: 380px'] { display: none; }
+           @media (max-width: 768px) {
+    .cards-grid { grid-template-columns: 1fr !important; }
+  }
           }
         `}</style>
       </section>
 
-      {/* ── Tools marquee ── */}
+      {/* â”€â”€ Tools marquee â”€â”€ */}
       <div style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '16px 0', overflow: 'hidden' }}>
         <div style={{ display: 'flex', gap: 0, animation: 'marquee 25s linear infinite', width: 'max-content' }}>
           {[...tools, ...tools].map((t, i) => (
@@ -112,11 +112,11 @@ export default function Home() {
         `}</style>
       </div>
 
-      {/* ── Quick About ── */}
+      {/* â”€â”€ Quick About â”€â”€ */}
       <section style={{ padding: '100px 0' }}>
         <div className="container-custom" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
           <div>
-            <div className="section-label">Who I Am</div>
+            <div className="section-label" id="about-start">Who I Am</div>
             <h2 className="section-title" style={{ marginBottom: 24 }}>
               Building Infra That<br /><span style={{ color: 'var(--teal)' }}>Never Sleeps</span>
             </h2>
@@ -124,16 +124,16 @@ export default function Home() {
               Based in Plano, TX, I'm a Senior DevOps Engineer who bridges the gap between development velocity and operational reliability. My work spans cloud architecture, container orchestration, and the automation systems that power modern software delivery.
             </p>
             <p style={{ color: 'var(--text-dim)', marginBottom: 36, lineHeight: 1.8 }}>
-              From cutting infrastructure costs by 25% at Andrews Distributing to leading Kubernetes migrations at Pearson Education — I build systems that scale, observe, and heal themselves.
+              From cutting infrastructure costs by 25% at Andrews Distributing to leading Kubernetes migrations at Pearson Education â€” I build systems that scale, observe, and heal themselves.
             </p>
-            <Link href="/about" className="btn-outline">Learn More About Me →</Link>
+            <Link href="/about" className="btn-outline">Learn More About Me â†’</Link>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }} className="cards-grid">
             {[
-              { icon: '☁️', title: 'Cloud Architecture', desc: 'Azure & AWS multi-region infrastructure design and cost optimization' },
-              { icon: '⚙️', title: 'CI/CD Automation', desc: 'End-to-end pipelines with Jenkins, GitHub Actions, and Azure DevOps' },
-              { icon: '🐳', title: 'Containerization', desc: 'Docker & Kubernetes deployments with AKS/EKS orchestration' },
-              { icon: '🔐', title: 'DevSecOps', desc: 'SAST/DAST integration, IAM policies, secrets management' },
+              { icon: 'â˜ï¸', title: 'Cloud Architecture', desc: 'Azure & AWS multi-region infrastructure design and cost optimization' },
+              { icon: 'âš™ï¸', title: 'CI/CD Automation', desc: 'End-to-end pipelines with Jenkins, GitHub Actions, and Azure DevOps' },
+              { icon: 'ðŸ³', title: 'Containerization', desc: 'Docker & Kubernetes deployments with AKS/EKS orchestration' },
+              { icon: 'ðŸ”', title: 'DevSecOps', desc: 'SAST/DAST integration, IAM policies, secrets management' },
             ].map(s => (
               <div key={s.title} className="card">
                 <div style={{ fontSize: '1.8rem', marginBottom: 12 }}>{s.icon}</div>
@@ -145,7 +145,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CTA Banner ── */}
+      {/* â”€â”€ CTA Banner â”€â”€ */}
       <section style={{ padding: '80px 0' }}>
         <div className="container-custom">
           <div style={{ background: 'linear-gradient(135deg, var(--surface) 0%, rgba(0,212,184,0.05) 100%)', border: '1px solid var(--teal)', padding: '60px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 32 }}>
@@ -165,3 +165,4 @@ export default function Home() {
     </>
   )
 }
+

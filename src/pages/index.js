@@ -29,7 +29,6 @@ export default function Home() {
             <span style={{ color: 'var(--teal)' }}>$ </span>{titles[idx]}
           </div>
           <p style={{ color: 'var(--text-dim)', fontSize: 'clamp(0.9rem, 2vw, 1.05rem)', lineHeight: 1.8, marginBottom: 36, maxWidth: 580 }}>
-            11+ years designing and operating cloud-native infrastructure at scale. Specializing in Kubernetes, Terraform, and CI/CD automation across Azure and AWS.
           </p>
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginBottom: 56 }}>
             <Link href="/projects" className="btn-primary">View My Work →</Link>
@@ -41,7 +40,6 @@ export default function Home() {
                 <div className="stat-num" style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}>{num}</div>
                 <div style={{ color: 'var(--text-muted)', fontSize: '0.72rem', marginTop: 4, fontFamily: 'JetBrains Mono, monospace' }}>{label}</div>
               </div>
-            ))}
           </div>
         </div>
       </section>
@@ -50,7 +48,6 @@ export default function Home() {
         <div style={{ display: 'flex', animation: 'marquee 25s linear infinite', width: 'max-content' }}>
           {[...tools, ...tools].map((t, i) => (
             <span key={i} style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.7rem', color: 'var(--text-muted)', padding: '0 24px', borderRight: '1px solid var(--border)', whiteSpace: 'nowrap', letterSpacing: '0.1em', textTransform: 'uppercase' }}>{t}</span>
-          ))}
         </div>
       </div>
 
@@ -59,15 +56,10 @@ export default function Home() {
           <div className="section-label">Who I Am</div>
           <h2 className="section-title" style={{ marginBottom: 24 }}>Building Infra That <span style={{ color: 'var(--teal)' }}>Never Sleeps</span></h2>
           <p style={{ color: 'var(--text-dim)', marginBottom: 20, lineHeight: 1.8, maxWidth: 720 }}>
-            Based in Plano, TX, I am a Senior DevOps Engineer who bridges the gap between development velocity and operational reliability. My work spans cloud architecture, container orchestration, and automation systems.
           </p>
           <p style={{ color: 'var(--text-dim)', marginBottom: 32, lineHeight: 1.8, maxWidth: 720 }}>
             From cutting infrastructure costs by 25% at Andrews Distributing to leading Kubernetes migrations at Pearson Education - I build systems that scale, observe, and heal themselves.
           </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 36 }}>
-            {['Cloud Architecture', 'CI/CD Automation', 'Containerization', 'DevSecOps'].map(t => (
-              <span key={t} className="tag" style={{ fontSize: '0.88rem', padding: '10px 18px' }}>{t}</span>
-            ))}
           </div>
           <Link href="/about" className="btn-outline">Learn More</Link>
         </div>

@@ -111,7 +111,7 @@ export default function Home() {
               </p>
               <Link href="/about" className="btn-outline">Learn More →</Link>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: 16 }}>
               {[
                 { icon: '☁️', title: 'Cloud Architecture', desc: 'Azure & AWS multi-region design' },
                 { icon: '⚙️', title: 'CI/CD Automation', desc: 'Jenkins, GitHub Actions, Azure DevOps' },
@@ -149,3 +149,4 @@ export default function Home() {
     </>
   )
 }
+

@@ -10,7 +10,6 @@ const tools = ["Docker","Kubernetes","Terraform","AWS","Azure","Jenkins","GitHub
 export default function Home() {
   const [idx, setIdx] = useState(0)
   const titles = ["Senior DevOps Engineer", "Cloud Architect", "SRE Practitioner", "Automation Expert"]
-
   useEffect(() => {
     const t = setInterval(() => setIdx(i => (i + 1) % titles.length), 3000)
     return () => clearInterval(t)
@@ -24,34 +23,27 @@ export default function Home() {
       <section style={{ minHeight: "100vh", display: "flex", alignItems: "center", padding: "120px 0 80px", position: "relative", overflow: "hidden" }}>
         <div className="orb" style={{ width: 500, height: 500, background: "radial-gradient(circle, rgba(0,212,184,0.12) 0%, transparent 70%)", top: -100, right: -100 }} />
         <div className="orb" style={{ width: 300, height: 300, background: "radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 70%)", bottom: 100, left: -50 }} />
-
         <div className="container-custom hero-outer">
           <div>
             <div className="section-label animate-fadeUp delay-1">
               Available for opportunities
               <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#22c55e", display: "inline-block", marginLeft: 8 }} />
             </div>
-
             <h1 className="display animate-fadeUp delay-2" style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", marginBottom: 8 }}>
-              Yusuf<br />
-              <span style={{ color: "var(--teal)" }}>Alagbe</span>
+              Yusuf<br /><span style={{ color: "var(--teal)" }}>Alagbe</span>
             </h1>
-
             <div className="animate-fadeUp delay-3" style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "1rem", color: "var(--text-dim)", marginBottom: 24, minHeight: 28 }}>
               <span style={{ color: "var(--teal)" }}>$ </span>
               <span key={idx}>{titles[idx]}</span>
               <span style={{ borderRight: "2px solid var(--teal)", marginLeft: 2 }}>&nbsp;</span>
             </div>
-
             <p className="animate-fadeUp delay-4" style={{ color: "var(--text-dim)", fontSize: "1.05rem", lineHeight: 1.8, marginBottom: 36, maxWidth: 520 }}>
               11+ years designing and operating cloud-native infrastructure at scale. Specializing in Kubernetes, Terraform, and CI/CD automation across Azure and AWS.
             </p>
-
             <div className="animate-fadeUp delay-5" style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
               <Link href="/projects" className="btn-primary">View My Work</Link>
               <Link href="/contact" className="btn-outline">Get In Touch</Link>
             </div>
-
             <div className="animate-fadeUp delay-5 stats-row" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, marginTop: 56, paddingTop: 40, borderTop: "1px solid var(--border)" }}>
               {[["11+", "Years Experience"], ["25%", "Cost Reduction"], ["70%", "Faster Provisioning"]].map(([num, label]) => (
                 <div key={num}>
@@ -62,8 +54,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="hero-photo animate-fadeIn delay-3" style={{ position: "relative", display: "flex", justifyContent: "center" }}>
-            <div style={{ position: "relative", width: 380, height: 460 }}>
+          <div className="hero-photo-wrap animate-fadeIn delay-3">
+            <div className="hero-photo-inner">
               <div style={{ position: "absolute", top: -12, right: -12, width: "100%", height: "100%", border: "2px solid var(--teal)", opacity: 0.3, zIndex: 0 }} />
               <div style={{ position: "relative", width: "100%", height: "100%", overflow: "hidden", zIndex: 1 }}>
                 <Image src="/yusuf.jpg" alt="Yusuf Alagbe" fill style={{ objectFit: "cover", objectPosition: "center top" }} priority />
@@ -80,11 +72,9 @@ export default function Home() {
       </section>
 
       <div style={{ background: "var(--surface)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)", padding: "16px 0", overflow: "hidden" }}>
-        <div style={{ display: "flex", gap: 0, animation: "marquee 25s linear infinite", width: "max-content" }}>
+        <div style={{ display: "flex", animation: "marquee 25s linear infinite", width: "max-content" }}>
           {[...tools, ...tools].map((t, i) => (
-            <span key={i} style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "0.75rem", color: "var(--text-muted)", padding: "0 32px", borderRight: "1px solid var(--border)", whiteSpace: "nowrap", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-              {t}
-            </span>
+            <span key={i} style={{ fontFamily: "JetBrains Mono, monospace", fontSize: "0.75rem", color: "var(--text-muted)", padding: "0 32px", borderRight: "1px solid var(--border)", whiteSpace: "nowrap", letterSpacing: "0.1em", textTransform: "uppercase" }}>{t}</span>
           ))}
         </div>
       </div>
@@ -97,14 +87,13 @@ export default function Home() {
               Building Infra That<br /><span style={{ color: "var(--teal)" }}>Never Sleeps</span>
             </h2>
             <p style={{ color: "var(--text-dim)", marginBottom: 20, lineHeight: 1.8 }}>
-              Based in Plano, TX, I am a Senior DevOps Engineer who bridges the gap between development velocity and operational reliability. My work spans cloud architecture, container orchestration, and the automation systems that power modern software delivery.
+              Based in Plano, TX, I am a Senior DevOps Engineer who bridges the gap between development velocity and operational reliability. My work spans cloud architecture, container orchestration, and automation systems.
             </p>
             <p style={{ color: "var(--text-dim)", marginBottom: 36, lineHeight: 1.8 }}>
               From cutting infrastructure costs by 25% at Andrews Distributing to leading Kubernetes migrations at Pearson Education, I build systems that scale, observe, and heal themselves.
             </p>
             <Link href="/about" className="btn-outline">Learn More About Me</Link>
           </div>
-
           <div className="cards-grid">
             {[
               { icon: "☁️", title: "Cloud Architecture", desc: "Azure & AWS multi-region infrastructure design and cost optimization" },
@@ -142,57 +131,21 @@ export default function Home() {
       <Footer />
 
       <style jsx global>{`
-        .hero-outer {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 80px;
-          align-items: center;
-        }
-        .about-outer {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 80px;
-          align-items: center;
-        }
-        .cards-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 16px;
-        }
-        .cta-box {
-          background: linear-gradient(135deg, var(--surface) 0%, rgba(0,212,184,0.05) 100%);
-          border: 1px solid var(--teal);
-          padding: clamp(32px, 5vw, 60px);
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          flex-wrap: wrap;
-          gap: 24px;
-        }
-        @keyframes marquee {
-          from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
-        }
+        .hero-outer { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .hero-photo-wrap { display: flex; justify-content: center; }
+        .hero-photo-inner { position: relative; width: 380px; height: 460px; }
+        .about-outer { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .cta-box { background: linear-gradient(135deg, var(--surface) 0%, rgba(0,212,184,0.05) 100%); border: 1px solid var(--teal); padding: clamp(32px, 5vw, 60px); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
         @media (max-width: 768px) {
-          .hero-outer {
-            grid-template-columns: 1fr !important;
-          }
-          .hero-photo {
-            display: none !important;
-          }
-          .about-outer {
-            grid-template-columns: 1fr !important;
-            gap: 40px !important;
-          }
-          .cards-grid {
-            grid-template-columns: 1fr !important;
-          }
-          .stats-row {
-            grid-template-columns: repeat(2, 1fr) !important;
-          }
-          .cta-box {
-            flex-direction: column !important;
-          }
+          .hero-outer { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .hero-photo-wrap { justify-content: center !important; padding: 0 20px; }
+          .hero-photo-inner { width: 100% !important; max-width: 300px !important; height: 360px !important; left: 0 !important; }
+          .about-outer { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .cards-grid { grid-template-columns: 1fr !important; }
+          .stats-row { grid-template-columns: repeat(2, 1fr) !important; }
+          .cta-box { flex-direction: column !important; }
         }
       `}</style>
     </>

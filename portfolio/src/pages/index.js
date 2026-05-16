@@ -126,9 +126,21 @@ export default function Home() {
             <p style={{ color: 'var(--text-dim)', marginBottom: 36, lineHeight: 1.8 }}>
               From cutting infrastructure costs by 25% at Andrews Distributing to leading Kubernetes migrations at Pearson Education â€” I build systems that scale, observe, and heal themselves.
             </p>
-            <Link href="/about" className="btn-outline">Learn More About Me â†’</Link>
+            <style jsx>{`
+  @media (max-width: 768px) {
+    .cards-grid { grid-template-columns: 1fr !important; }
+    .about-outer { grid-template-columns: 1fr !important; }
+  }
+`}</style>
+<style jsx>{`
+  @media (max-width: 768px) {
+    .cards-grid { grid-template-columns: 1fr !important; }
+    .about-outer { grid-template-columns: 1fr !important; }
+  }
+`}</style>
+<Link href="/about" className="btn-outline">Learn More About Me â†’</Link>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }} className="cards-grid">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }} className="cards-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             {[
               { icon: 'â˜ï¸', title: 'Cloud Architecture', desc: 'Azure & AWS multi-region infrastructure design and cost optimization' },
               { icon: 'âš™ï¸', title: 'CI/CD Automation', desc: 'End-to-end pipelines with Jenkins, GitHub Actions, and Azure DevOps' },

@@ -4,8 +4,20 @@ import Image from "next/image"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import { useEffect, useState } from "react"
+import { FaAws, FaDocker, FaGithub } from "react-icons/fa"
+import { SiKubernetes, SiTerraform, SiJenkins, SiAnsible, SiGrafana, SiPrometheus, SiHelm, SiArgocd, SiVault } from "react-icons/si"
+import { MdSecurity, MdLocationOn } from "react-icons/md"
+import { VscAzure } from "react-icons/vsc"
+import { BsGearFill, BsCloudFill, BsShieldLockFill } from "react-icons/bs"
 
 const tools = ["Docker","Kubernetes","Terraform","AWS","Azure","Jenkins","GitHub Actions","Ansible","Datadog","Grafana","Prometheus","Python","Bash","Helm","EKS","AKS","ArgoCD","Vault"]
+
+const serviceCards = [
+  { icon: BsCloudFill, title: "Cloud Architecture", desc: "Azure & AWS multi-region infrastructure design and cost optimization", color: "#00d4b8" },
+  { icon: BsGearFill, title: "CI/CD Automation", desc: "End-to-end pipelines with Jenkins, GitHub Actions, and Azure DevOps", color: "#f59e0b" },
+  { icon: FaDocker, title: "Containerization", desc: "Docker & Kubernetes deployments with AKS/EKS orchestration", color: "#2496ed" },
+  { icon: BsShieldLockFill, title: "DevSecOps", desc: "SAST/DAST integration, IAM policies, secrets management", color: "#8b5cf6" },
+]
 
 export default function Home() {
   const [idx, setIdx] = useState(0)
@@ -95,14 +107,11 @@ export default function Home() {
             <Link href="/about" className="btn-outline">Learn More About Me</Link>
           </div>
           <div className="cards-grid">
-            {[
-              { icon: "☁️", title: "Cloud Architecture", desc: "Azure & AWS multi-region infrastructure design and cost optimization" },
-              { icon: "⚙️", title: "CI/CD Automation", desc: "End-to-end pipelines with Jenkins, GitHub Actions, and Azure DevOps" },
-              { icon: "🐳", title: "Containerization", desc: "Docker & Kubernetes deployments with AKS/EKS orchestration" },
-              { icon: "🔐", title: "DevSecOps", desc: "SAST/DAST integration, IAM policies, secrets management" },
-            ].map(s => (
+            {serviceCards.map(s => (
               <div key={s.title} className="card" style={{ padding: "24px" }}>
-                <div style={{ fontSize: "2rem", marginBottom: 12 }}>{s.icon}</div>
+                <div style={{ width: 48, height: 48, background: `${s.color}18`, border: `1px solid ${s.color}40`, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16 }}>
+                  <s.icon size={24} color={s.color} />
+                </div>
                 <h3 style={{ fontFamily: "Syne, sans-serif", fontWeight: 700, fontSize: "1rem", marginBottom: 8 }}>{s.title}</h3>
                 <p style={{ color: "var(--text-muted)", fontSize: "0.85rem", lineHeight: 1.6 }}>{s.desc}</p>
               </div>
